@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elite Embossing & Printing</title>
+<meta name="description" content="you dream it, we make it">
+<link rel="icon" href="Assets/EM_Logo.png">
+
+<style>
+:root {
+  --color-primary: #673de6;
+  --color-accent: #f15829;
+  --color-dark: #1d1e20;
+  --max-width: 1200px;
+  --gap: 24px;
+  --radius: 10px;
+  font-family: "Rubik", system-ui, sans-serif;
+}
+
+/* Reset */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--color-dark);
+  line-height: 1.5;
+}
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* HEADER */
+.site-header {
+  background: rgba(0,0,0,0.85);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  color: #fff;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo-area img {
+  height: 48px;
+}
+.logo-area span {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+/* MOBILE MENU */
+#menuToggle { display: none; }
+.menu-btn {
+  display: none;
+  cursor: pointer;
+  font-size: 28px;
+  padding: 4px 12px;
+  color: var(--color-accent);
+}
+
+.nav-list {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list a {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+.nav-list a:hover { color: var(--color-primary); }
+
+/* HERO */
+.hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(23,6,46,0.45), rgba(23,6,46,0.65));
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  padding: 40px 20px;
+}
+
+.hero h1 {
+  color: var(--color-accent);
+  font-size: clamp(32px, 5vw, 60px);
+  margin: 0 0 10px;
+}
+
+.tagline { font-weight: bold; color: var(--color-accent); }
+.lead { margin: 10px 0 20px; color: #eae8f8; }
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+}
+.btn.primary { background: var(--color-primary); color: #fff; }
+.btn.ghost { border: 2px solid rgba(255,255,255,0.2); color: #fff; }
+
+/* SHOWCASE SECTION */
+.showcase {
+  padding: 60px 0;
+}
+.showcase h2 { text-align: center; margin-bottom: 40px; color: var(--color-primary); }
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.showcase-item {
+  text-align: center;
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.showcase-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+.showcase-item p {
+  margin-top: 10px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* CONTACT SECTION */
+.contact { padding: 50px 0; }
+.contact a { color: var(--color-accent); }
+
+/* FOOTER */
+.site-footer {
+  background: #fafafa;
+  padding: 24px 0;
+  border-top: 1px solid #eee;
+  text-align: center;
+}
+
+/* MOBILE */
+@media (max-width: 800px) {
+  .menu-btn { display: block; }
+
+  .nav-list {
+    display: none;
+    position: absolute;
+    top: 62px;
+    right: 20px;
+    background: #111;
+    padding: 12px;
+    border-radius: 8px;
+    flex-direction: column;
+  }
+
+  #menuToggle:checked ~ nav .nav-list { display: flex; }
+
+  .hero-content { text-align: center; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo-area">
+      <img src="Assets/EM_Logo.png" alt="Elite Embossing & Printing">
+      <span>Elite Embossing & Printing</span>
+    </div>
+
+    <input type="checkbox" id="menuToggle">
+    <label class="menu-btn" for="menuToggle">☰</label>
+
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="#contact">Contact us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="Assets/FPage_Vid.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
+      <h1>Elite Embossing & Printing</h1>
+      <p class="tagline">you dream it, we make it</p>
+      <p class="lead">From textured business cards to premium packaging — we bring your ideas to life.</p>
+
+      <div class="hero-ctas">
+        <a class="btn primary" href="#contact">Contact us</a>
+        <a class="btn ghost" href="gallery.html">View gallery</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOWCASE -->
+  <section class="showcase container">
+    <h2>What We Can Do</h2>
+    <div class="showcase-grid">
+      <div class="showcase-item">
+        <img src="images/sample1.jpg" alt="Custom Embossed Business Cards">
+        <p>Custom Embossed Business Cards</p>
+      </div>
+      <div class="showcase-item">
+        <img src="images/sample2.jpg" alt="Foil Stamped Invitations">
+        <p>Foil-Stamped Invitations</p>
+      </div>
+      <div class="showcase-item">
+        <img src="images/sample3.jpg" alt="Premium Printing Services">
+        <p>Premium Printing Projects</p>
+      </div>
+      <div class="showcase-item">
+        <img src="images/sample4.jpg" alt="Large Format Prints">
+        <p>Large Format Prints</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY PREVIEW -->
+<section class="showcase container">
+  <h2>Gallery Preview</h2>
+  <div class="showcase-grid">
+    <div class="showcase-item">
+      <img src="images/gallery1.jpg" alt="Gallery Item 1">
+    </div>
+    <div class="showcase-item">
+      <img src="images/gallery2.jpg" alt="Gallery Item 2">
+    </div>
+    <div class="showcase-item">
+      <img src="images/gallery3.jpg" alt="Gallery Item 3">
+    </div>
+    <div class="showcase-item">
+      <img src="images/gallery4.jpg" alt="Gallery Item 4">
+    </div>
+  </div>
+  <div style="text-align:center; margin-top:30px;">
+    <a class="btn primary" href="gallery.html">See Full Gallery</a>
+  </div>
+</section>
+
+
+  <!-- CONTACT SECTION -->
+  <section class="contact container" id="contact">
+    <h2>Contact Us</h2>
+
+    <p><strong>Address:</strong><br>
+      1013 Deborah Street<br>
+      Claremont, Pretoria
+    </p>
+
+    <p>
+      <strong>Phone:</strong> <a href="tel:0615295221">061 529 5221</a><br>
+      <strong>Email:</strong> <a href="mailto:info@eliteembossers.co.za">info@eliteembossers.co.za</a>
+    </p>
+
+    <a class="btn primary" href="tel:0615295221">Give us a call</a>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© 2025 Elite Embossing & Printing</p>
+  </div>
+</footer>
+
+</body>
+</html>

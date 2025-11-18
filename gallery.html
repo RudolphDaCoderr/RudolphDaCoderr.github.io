@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elite Embossing & Printing - Gallery</title>
+<meta name="description" content="Gallery of our work - you dream it, we make it">
+<link rel="icon" href="Assets/EM_Logo.png">
+<style>
+:root {
+    --color-primary: #673de6;
+    --color-accent: #f15829;
+    --color-dark: #1d1e20;
+    --max-width: 1200px;
+    --gap: 24px;
+    --radius: 10px;
+    font-family: "Rubik", system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    background: #fff;
+    color: var(--color-dark);
+    line-height: 1.5;
+}
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.site-header {
+    background: rgba(0,0,0,0.85);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    color: #fff;
+}
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+}
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.logo-area img {
+    height: 48px;
+}
+.logo-area span {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-accent);
+}
+.back-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--color-primary);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 8px 18px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.back-btn:hover {
+    background: var(--color-accent);
+    color: #fff;
+}
+@media (max-width: 800px) {
+    .header-inner { flex-direction: column; gap: 12px; }
+    .back-btn { width: 100%; justify-content: center; }
+}
+.gallery-section {
+    padding: 60px 0;
+}
+.gallery-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--color-primary);
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+.gallery-item {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    overflow: hidden;
+    text-align: center;
+    padding: 10px;
+}
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+}
+.gallery-item p {
+    margin: 10px 0 0;
+    font-weight: 600;
+    color: #333;
+}
+.site-footer {
+    background: #fafafa;
+    padding: 24px 0;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+</style>
+</head>
+<body>
+<!-- HEADER -->
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo-area">
+            <img src="Assets/EM_Logo.png" alt="Elite Embossing & Printing">
+            <span>Elite Embossing & Printing</span>
+        </div>
+        <a href="index.html" class="back-btn">
+            <img src="Assets/EM_Logo.png" alt="Logo" style="height:24px;">
+            Back to Home
+        </a>
+    </div>
+</header>
+<main>
+    <section class="gallery-section container">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="images/gallery1.jpg" alt="Gallery Item 1">
+                <p>Embossed Business Cards</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery2.jpg" alt="Gallery Item 2">
+                <p>Foil Invitations</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery3.jpg" alt="Gallery Item 3">
+                <p>Premium Packaging</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery4.jpg" alt="Gallery Item 4">
+                <p>Large Format Prints</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery5.jpg" alt="Gallery Item 5">
+                <p>Custom Labels</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery6.jpg" alt="Gallery Item 6">
+                <p>Specialty Stationery</p>
+            </div>
+            <!-- Add more gallery items as needed -->
+        </div>
+    </section>
+</main>
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p>© 2025 Elite Embossing & Printing</p>
+    </div>
+</footer>
+</body>
+</html>
