@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elite Printing</title>
+<meta name="description" content="you dream it, we make it">
+<link rel="icon" href="Assets/elite_logo.png">
+
+<style>
+:root {
+  --color-primary: #673de6;
+  --color-accent: #f15829;
+  --color-dark: #1d1e20;
+  --max-width: 1200px;
+  --gap: 24px;
+  --radius: 10px;
+  font-family: "Rubik", system-ui, sans-serif;
+}
+
+/* Reset */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--color-dark);
+  line-height: 1.5;
+}
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* HEADER */
+.site-header {
+  background: rgba(0,0,0,0.85);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  color: #fff;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo-area img {
+  height: 48px;
+}
+.logo-area span {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+/* MOBILE MENU */
+#menuToggle { display: none; }
+.menu-btn {
+  display: none;
+  cursor: pointer;
+  font-size: 28px;
+  padding: 4px 12px;
+  color: var(--color-accent);
+}
+
+.nav-list {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list a {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+.nav-list a:hover { color: var(--color-primary); }
+
+/* HERO */
+.hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(23,6,46,0.45), rgba(23,6,46,0.65));
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  padding: 40px 20px;
+}
+
+.hero h1 {
+  color: var(--color-accent);
+  font-size: clamp(32px, 5vw, 60px);
+  margin: 0 0 10px;
+}
+
+.tagline { font-weight: bold; color: var(--color-accent); }
+.lead { margin: 10px 0 20px; color: #eae8f8; }
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+}
+.btn.primary { background: var(--color-primary); color: #fff; }
+.btn.ghost { border: 2px solid rgba(255,255,255,0.2); color: #fff; }
+
+/* SHOWCASE SECTION */
+.showcase {
+  padding: 60px 0;
+}
+.showcase h2 { text-align: center; margin-bottom: 40px; color: var(--color-primary); }
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.showcase-item {
+  text-align: center;
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* UPDATED — images now same size */
+.showcase-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+.showcase-item p {
+  margin-top: 10px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* CONTACT SECTION */
+.contact { padding: 50px 0; }
+.contact a { color: var(--color-accent); }
+
+/* FOOTER */
+.site-footer {
+  background: #fafafa;
+  padding: 24px 0;
+  border-top: 1px solid #eee;
+  text-align: center;
+}
+
+/* MOBILE */
+@media (max-width: 800px) {
+  .menu-btn { display: block; }
+
+  .nav-list {
+    display: none;
+    position: absolute;
+    top: 62px;
+    right: 20px;
+    background: #111;
+    padding: 12px;
+    border-radius: 8px;
+    flex-direction: column;
+  }
+
+  #menuToggle:checked ~ nav .nav-list { display: flex; }
+
+  .hero-content { text-align: center; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo-area">
+      <img src="Assets/elite_logo.png" alt="Elite Printing">
+      <span>Elite Printing</span>
+    </div>
+
+    <input type="checkbox" id="menuToggle">
+    <label class="menu-btn" for="menuToggle">☰</label>
+
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="#contact">Contact us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline disablepictureinpicture 
+    controlslist="nodownload noplaybackrate nofullscreen">
+  <source src="Assets/20250907_115639.mp4" type="video/mp4">
+</video>
+
+
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
+      <h1>Elite Printing</h1>
+      <p class="tagline">you dream it, we make it</p>
+      <p class="lead">From textured business cards to premium packaging — we bring your ideas to life.</p>
+
+      <div class="hero-ctas">
+        <a class="btn primary" href="#contact">Contact us</a>
+        <a class="btn ghost" href="gallery.html">View gallery</a>
+      </div>
+    </div>
+  </section>
+
+
+<!-- ABOUT US -->
+<section class="showcase container">
+  <h2>About Us</h2>
+  <p style="max-width:800px; margin:auto; text-align:center;">
+    Elite Printing is a trusted printing and signage company in Pretoria, providing high-quality branding 
+    solutions including banners, pull-ups, vehicle branding, shopfront signage, corporate gifts, canvas 
+    prints and more. We combine modern design, excellent workmanship and fast turnaround times to help 
+    businesses showcase their brand with confidence. Located in Claremont, we proudly serve clients across 
+    Pretoria and South Africa with reliable, affordable and professional printing services.
+  </p>
+</section>
+
+  <!-- GALLERY PREVIEW -->
+<section class="showcase container">
+  <h2>Gallery Preview</h2>
+  <div class="showcase-grid">
+    <div class="showcase-item">
+      <img src="Assets/gallery1.jpg" alt="Gallery Item 1">
+    </div>
+    <div class="showcase-item">
+      <img src="Assets/gallery2.jpg" alt="Gallery Item 2">
+    </div>
+    <div class="showcase-item">
+      <img src="Assets/gallery3.jpg" alt="Gallery Item 3">
+    </div>
+    <div class="showcase-item">
+      <img src="Assets/gallery4.jpg" alt="Gallery Item 4">
+    </div>
+  </div>
+  <div style="text-align:center; margin-top:30px;">
+    <a class="btn primary" href="gallery.html">See Full Gallery</a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="showcase container">
+  <h2>Our Services</h2>
+  <div class="showcase-grid">
+
+    <div class="showcase-item"><img src="Assets/Signage.jpg" alt="Signage">
+      <p>Signage — Shopfronts, Vinyl, Lightboxes, 3D Lettering</p></div>
+
+    <div class="showcase-item"><img src="Assets/Banner.jpg" alt="Banners & Large Format">
+      <p>Banners & Large Format — PVC banners, pull-ups, flags, display walls</p></div>
+
+    <div class="showcase-item"><img src="Assets/Vehicle.jpg" alt="Vehicle Branding">
+      <p>Vehicle Branding — Full wraps, partial wraps, magnets, decals</p></div>
+
+    <div class="showcase-item"><img src="Assets/Corparate.jpeg" alt="Corporate Printing">
+      <p>Corporate Printing — Business cards, flyers, brochures, stationery</p></div>
+
+    <div class="showcase-item"><img src="Assets/Personalised_gifts.jpg" alt="Corporate & Personalised Gifts">
+      <p>Corporate & Personalised Gifts — Branded gifts & promotional items</p></div>
+
+    <div class="showcase-item"><img src="Assets/Canvas.jpg" alt="Canvas & Custom Prints">
+      <p>Canvas & Custom Prints — Canvases, décor prints, photo enlargements</p></div>
+
+    <div class="showcase-item"><img src="Assets/Wedding.jpg" alt="Wedding & Event Stationery">
+      <p>Wedding & Event Stationery — Invitations, menus, tags, décor</p></div>
+
+    <div class="showcase-item"><img src="Assets/Display.jpg" alt="Display Items">
+      <p>Display Items — Gazebos, flags, counters, walls, banners</p></div>
+
+  </div>
+</section>
+
+<!-- More About -->
+<section style="padding: 50px 0; text-align: center;">
+  <div style="
+      display: inline-block;
+      background: #ffffff;
+      padding: 30px 40px;
+      border-radius: 14px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      max-width: 600px;
+  ">
+    <h2 style="
+        margin: 0 0 16px;
+        color: var(--color-primary);
+        font-size: 28px;
+        font-weight: 700;
+    ">
+      Want to See More?
+    </h2>
+
+    <p style="margin-bottom: 22px; color: #444; font-size: 16px;">
+      Explore our full range of branded gifts, products, and services.
+    </p>
+
+    <a href="https://promoafrica.com/eliteprinting" 
+       style="
+          display: inline-block;
+          padding: 14px 28px;
+          background: var(--color-accent);
+          color: #fff;
+          text-decoration: none;
+          font-size: 17px;
+          border-radius: 50px;
+          font-weight: 700;
+          transition: 0.25s ease-in-out;
+       "
+       onmouseover="this.style.background='var(--color-primary)'"
+       onmouseout="this.style.background='var(--color-accent)'">
+      Learn More About Elite Printing
+    </a>
+  </div>
+</section>
+
+
+ <!-- CONTACT SECTION -->
+<section class="contact container" id="contact">
+  <h2>Contact Us</h2>
+
+  <p><strong>Address:</strong><br>
+    1013 Deborah Street<br>
+    Claremont, Pretoria, 0082
+  </p>
+
+  <p>
+    <strong>Phone:</strong> <a href="tel:0615295221">061 529 5221</a><br>
+
+    <strong>Facebook:</strong>
+    <a href="https://www.facebook.com/profile.php?id=61561310764996" target="_blank">Elite Printing</a><br>
+
+    <strong>TikTok:</strong>
+    <a href="https://www.tiktok.com/@elite.embossers" target="_blank">@elite.embossers</a>
+  </p>
+
+  <a class="btn primary" href="https://wa.me/27615295221" target="_blank">Chat on WhatsApp</a>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© 2025 Elite Printing</p>
+  </div>
+</footer>
+
+</body>
+</html>
